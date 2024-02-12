@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drag & Drop Using JavaScript - Easy Tutorials</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div id="left" class="container-box">
+    <div class="list" draggable="true" id="list1"><img src="icon.png" alt="" />List 1</div>
+    <div class="list" draggable="true" id="list2"><img src="icon.png" alt="" />List 2</div>
+    <div class="list" draggable="true" id="list3"><img src="icon.png" alt="" />List 3</div>
+    <div class="list" draggable="true" id="list4"><img src="icon.png" alt="" />List 4</div>
+  </div>
+  <div id="right" class="container-box"></div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const lists = document.querySelectorAll(".list");
+  const containers = document.querySelectorAll(".container-box");
+
+  // Add dragstart event listener to all lists
+  lists.forEach(list => {
+    list.addEventListener("dragstart", function(e) {
+      // Set data to be transferred during drag
+      e.dataTransfer.setData("text/plain", list.id);
+    });
+  });
+
+  // Add dragover and drop event listeners to all containers
+  containers.forEach(container => {
+    container.addEventListener("dragover", function(e) {
+      e.preventDefault();
+    });
+
+    container.addEventListener("drop", function(e) {
+      e.preventDefault();
+      // Get the dragged element's id
+      const data = e.dataTransfer.getData("text/plain");
+      // Append the dragged element to the container
+      const draggedElement = document.getElementById(data);
+      container.appendChild(draggedElement);
+    });
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* Resetting default styles and setting global styles */
+* {
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    font-family: 'Poppins', sans-serif; /* Set default font family */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Main container styling */
+.container {
+    width: 100%; /* Occupy full width of the viewport */
+    min-height: 100vh; /* Set minimum height as the full viewport height */
+    background: #0b0423; /* Set background color */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Container boxes for left and right sides */
+.container-box {
+    width: 300px; /* Set width of container boxes */
+    min-height: 400px; /* Set minimum height of container boxes */
+    margin: 20px; /* Add margin around container boxes */
+    border: 2px dashed #fff; /* Add dashed border with white color */
+}
+
+/* Styling for individual lists */
+.list {
+    background: #e91e63; /* Set background color */
+    height: 60px; /* Set height of each list item */
+    margin: 30px; /* Add margin around each list item */
+    color: #fff; /* Set text color */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    cursor: grab; /* Set cursor to grab */
+}
+
+/* Styling for list icons */
+.list img {
+    width: 10px; /* Set width of list icons */
+    margin-right: 15px; /* Add margin to the right of list icons */
+    margin-left: 20px; /* Add margin to the left of list icons */
+}
